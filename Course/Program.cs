@@ -3,24 +3,15 @@ using System.Globalization;
 namespace Course {
     class Program {
         static void Main(string[] args) {
-            Console.WriteLine("Digite três números:");
-            int n1 = int.Parse(Console.ReadLine());
-            int n2 = int.Parse(Console.ReadLine());
-            int n3 = int.Parse(Console.ReadLine());
-            double resultado = Maior(n1, n2, n3);
-            Console.WriteLine("Maior = " + resultado);
-        }
-        static int Maior(int a, int b, int c) {
-            int m;
-            if (a > b && a > c) {
-                m = a;
-            } else if (b > c) {
-                m = b;
-            } else {
-                m = c;
-            }
-            return m;
+            Console.Write("Qual é a cotação do dólar? ");
+            double cotacao = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
+            Console.Write("Quantos dólares você vai comprar? ");
+            double quantia = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            double result = ConversorDeMoeda.DolarParaReal(quantia, cotacao);
+
+            Console.WriteLine("Valor a ser pago em reais = " + result.ToString("F2", CultureInfo.InvariantCulture));
         }
     }
 }
