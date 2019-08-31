@@ -1,31 +1,44 @@
 ﻿using System;
 using System.Globalization;
+using System.Collections.Generic;
 
 namespace Course {
     class Program {
         static void Main(string[] args) {
-            Estudante[] vect = new Estudante[10];
-
-            Console.Write("Quantos quartos serão alugados?");
+            Console.Write("How many employees will be registered? ");
             int n = int.Parse(Console.ReadLine());
 
+            List<Employee> list = new List<Employee>();
+
             for (int i = 1; i <= n; i++) {
+                Console.WriteLine("Employee #" + i + ": ");
+                Console.Write("Id: ");
+                int id = int.Parse(Console.ReadLine());
+                Console.Write("Name: ");
+                string name = Console.ReadLine();
+                Console.Write("Salary: ");
+                double salary = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                list.Add(new Employee(id, name, salary));
                 Console.WriteLine();
-                Console.WriteLine($"Aluguel #{i}:");
-                Console.Write("Nome: ");
-                string nome = Console.ReadLine();
-                Console.Write("Email: ");
-                string email = Console.ReadLine();
-                Console.Write("Quarto: ");
-                int quarto = int.Parse(Console.ReadLine());
-                vect[quarto] = new Estudante(nome, email);
             }
+
+            Console.Write("Enter the employee id that will have salary increase: ");
+            int searchId = int.Parse(Console.ReadLine());
+
+            Employee emp = list.Find(x => x.Id == searchId);
+            if (emp != null) {
+                Console.Write("Enter the percentage: ");
+                double percentage = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                emp.increaseSalary(percentage);
+            }
+            else {
+                Console.WriteLine("This does not exist!");
+            }
+
             Console.WriteLine();
-            Console.WriteLine("Quartos ocupados");
-            for (int i = 0; i < 10; i++) {
-                if (vect[i] != null) {
-                    Console.WriteLine(i + ": " + vect[i]);
-                }
+            Console.WriteLine("Updated list of employees:");
+            foreach (Employee obj in list) {
+                Console.WriteLine(obj);
             }
         }
     }
