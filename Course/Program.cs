@@ -5,41 +5,38 @@ using System.Collections.Generic;
 namespace Course {
     class Program {
         static void Main(string[] args) {
-            Console.Write("How many employees will be registered? ");
-            int n = int.Parse(Console.ReadLine());
-
-            List<Employee> list = new List<Employee>();
-
-            for (int i = 1; i <= n; i++) {
-                Console.WriteLine("Employee #" + i + ": ");
-                Console.Write("Id: ");
-                int id = int.Parse(Console.ReadLine());
-                Console.Write("Name: ");
-                string name = Console.ReadLine();
-                Console.Write("Salary: ");
-                double salary = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                list.Add(new Employee(id, name, salary));
-                Console.WriteLine();
+            string[] line = Console.ReadLine().Split(' ');
+            int n = int.Parse(line[0]);
+            int m = int.Parse(line[1]);
+            int[,] mat = new int[n, m];
+            for (int i = 0; i < n; i++) {
+                string[] values = Console.ReadLine().Split(' ');
+                for (int j = 0; j < m; j++) {
+                    mat[i, j] = int.Parse(values[j]);
+                }
             }
+            int x = int.Parse(Console.ReadLine());
 
-            Console.Write("Enter the employee id that will have salary increase: ");
-            int searchId = int.Parse(Console.ReadLine());
-
-            Employee emp = list.Find(x => x.Id == searchId);
-            if (emp != null) {
-                Console.Write("Enter the percentage: ");
-                double percentage = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                emp.increaseSalary(percentage);
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < m; j++) {
+                    if (mat[i,j] == x) {
+                        Console.WriteLine("Position " + i + "," + j + ":");
+                        if (j > 0) {
+                            Console.WriteLine("Left: " + mat[i,j - 1]);
+                        }
+                        if (i > 0) {
+                            Console.WriteLine("Up: " + mat[i - 1, j]);
+                        }
+                        if (j < m - 1) {
+                            Console.WriteLine("Right: " + mat[i, j + 1]);
+                        }
+                        if (i < n - 1) {
+                            Console.WriteLine("Down: " + mat[i + 1, j]);
+                        }
+                    }
+                }
             }
-            else {
-                Console.WriteLine("This does not exist!");
-            }
-
-            Console.WriteLine();
-            Console.WriteLine("Updated list of employees:");
-            foreach (Employee obj in list) {
-                Console.WriteLine(obj);
-            }
+            
         }
     }
 }
