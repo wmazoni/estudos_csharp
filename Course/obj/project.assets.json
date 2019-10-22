@@ -693,11 +693,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\repositorios\\csharp\\estudos_csharp\\Course\\Course.csproj",
+      "projectUniqueName": "D:\\repositorios\\csharp\\estudos_csharp_completo_2019\\Course\\Course.csproj",
       "projectName": "Course",
-      "projectPath": "D:\\repositorios\\csharp\\estudos_csharp\\Course\\Course.csproj",
+      "projectPath": "D:\\repositorios\\csharp\\estudos_csharp_completo_2019\\Course\\Course.csproj",
       "packagesPath": "C:\\Users\\wmazo\\.nuget\\packages\\",
-      "outputPath": "D:\\repositorios\\csharp\\estudos_csharp\\Course\\obj\\",
+      "outputPath": "D:\\repositorios\\csharp\\estudos_csharp_completo_2019\\Course\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\wmazo\\AppData\\Roaming\\NuGet\\NuGet.Config",

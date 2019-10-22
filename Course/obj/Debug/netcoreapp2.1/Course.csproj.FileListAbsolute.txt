@@ -19,3 +19,13 @@ D:\repositorios\csharp\estudos_csharp\Course\obj\Debug\netcoreapp2.1\Course.Asse
 D:\repositorios\csharp\estudos_csharp\Course\obj\Debug\netcoreapp2.1\Course.AssemblyInfo.cs
 D:\repositorios\csharp\estudos_csharp\Course\obj\Debug\netcoreapp2.1\Course.dll
 D:\repositorios\csharp\estudos_csharp\Course\obj\Debug\netcoreapp2.1\Course.pdb
+D:\repositorios\csharp\estudos_csharp_completo_2019\Course\bin\Debug\netcoreapp2.1\Course.deps.json
+D:\repositorios\csharp\estudos_csharp_completo_2019\Course\bin\Debug\netcoreapp2.1\Course.runtimeconfig.json
+D:\repositorios\csharp\estudos_csharp_completo_2019\Course\bin\Debug\netcoreapp2.1\Course.runtimeconfig.dev.json
+D:\repositorios\csharp\estudos_csharp_completo_2019\Course\bin\Debug\netcoreapp2.1\Course.dll
+D:\repositorios\csharp\estudos_csharp_completo_2019\Course\bin\Debug\netcoreapp2.1\Course.pdb
+D:\repositorios\csharp\estudos_csharp_completo_2019\Course\obj\Debug\netcoreapp2.1\Course.csprojAssemblyReference.cache
+D:\repositorios\csharp\estudos_csharp_completo_2019\Course\obj\Debug\netcoreapp2.1\Course.AssemblyInfoInputs.cache
+D:\repositorios\csharp\estudos_csharp_completo_2019\Course\obj\Debug\netcoreapp2.1\Course.AssemblyInfo.cs
+D:\repositorios\csharp\estudos_csharp_completo_2019\Course\obj\Debug\netcoreapp2.1\Course.dll
+D:\repositorios\csharp\estudos_csharp_completo_2019\Course\obj\Debug\netcoreapp2.1\Course.pdb
