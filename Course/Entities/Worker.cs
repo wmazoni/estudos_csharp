@@ -28,7 +28,7 @@ namespace Course.Entities
         }
         public void RemoveContract(HourContract contract)
         {
-            Contracts.Add(contract);
+            Contracts.Remove(contract);
         }
         public double Income(int year, int month)
         {
