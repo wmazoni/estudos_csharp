@@ -688,20 +688,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\wmazo\\.nuget\\packages\\": {}
+    "C:\\Users\\wmazo\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\repositorios\\csharp\\estudos_csharp_completo_2019\\Course\\Course.csproj",
+      "projectUniqueName": "D:\\repositorios\\dotnet\\estudos_csharp_completo_2019\\Course\\Course.csproj",
       "projectName": "Course",
-      "projectPath": "D:\\repositorios\\csharp\\estudos_csharp_completo_2019\\Course\\Course.csproj",
+      "projectPath": "D:\\repositorios\\dotnet\\estudos_csharp_completo_2019\\Course\\Course.csproj",
       "packagesPath": "C:\\Users\\wmazo\\.nuget\\packages\\",
-      "outputPath": "D:\\repositorios\\csharp\\estudos_csharp_completo_2019\\Course\\obj\\",
+      "outputPath": "D:\\repositorios\\dotnet\\estudos_csharp_completo_2019\\Course\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
         "C:\\Users\\wmazo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"

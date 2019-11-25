@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using Course.Entities;
+using System.Globalization;
 
 namespace Course
 {
@@ -7,28 +9,39 @@ namespace Course
     {
         static void Main(string[] args)
         {
-            Comment c1 = new Comment("Have a nice trip!");
-            Comment c2 = new Comment("Wow that's awesome!");
-            Post p1 = new Post(
-                DateTime.Parse("21/06/2018 13:05:44"),
-                "Travelling to New Zealand",
-                "I'm going to visit this wonderful country!",
-                12);
-            p1.AddComment(c1);
-            p1.AddComment(c2);
+            List<Employee> list = new List<Employee>();
 
-            Comment c3 = new Comment("Good night");
-            Comment c4 = new Comment("May the force be with you");
-            Post p2 = new Post(
-                DateTime.Parse("28/07/2018 23:14:19"),
-                "Good night guys",
-                "See you tomorrow",
-                5);
-            p2.AddComment(c3);
-            p2.AddComment(c4);
+            Console.Write("Enter the number of employees: ");
+            int n = int.Parse(Console.ReadLine());
 
-            Console.WriteLine(p1);
-            Console.WriteLine(p2);
+            for (int i = 1; i <= n; i++)
+            {
+                Console.WriteLine($"Employee #{i} data:");
+                Console.Write("Outsourced (y/n)? ");
+                char ch = char.Parse(Console.ReadLine());
+                Console.Write("Nome: ");
+                string name = Console.ReadLine();
+                Console.Write("Hours: ");
+                int hours = int.Parse(Console.ReadLine());
+                Console.Write("Value per hour: ");
+                double valuePerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                if (ch == 'y')
+                {
+                    Console.Write("Additional charge: ");
+                    double additionalCharge = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    list.Add(new OutsourcedEmployee(name, hours, valuePerHour, additionalCharge));
+                } 
+                else
+                {
+                    list.Add(new Employee(name, hours, valuePerHour));
+                } 
+            }
+            Console.WriteLine();
+            Console.WriteLine("PAYMENTS");
+            foreach (Employee emp in list)
+            {
+                Console.WriteLine(emp.Name + " - $ " + emp.Payment().ToString("F2", CultureInfo.InvariantCulture));
+            }
         }
     }
 }
