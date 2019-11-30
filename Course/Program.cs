@@ -9,38 +9,44 @@ namespace Course
     {
         static void Main(string[] args)
         {
-            List<Employee> list = new List<Employee>();
+            List<Product> list = new List<Product>();
 
-            Console.Write("Enter the number of employees: ");
+            Console.Write("Enter the number of products: ");
             int n = int.Parse(Console.ReadLine());
 
             for (int i = 1; i <= n; i++)
             {
-                Console.WriteLine($"Employee #{i} data:");
-                Console.Write("Outsourced (y/n)? ");
+                Console.WriteLine($"Product #{i} data:");
+                Console.Write("Common, used or imported (c/u/i)? ");
                 char ch = char.Parse(Console.ReadLine());
-                Console.Write("Nome: ");
+                Console.Write("Name: ");
                 string name = Console.ReadLine();
-                Console.Write("Hours: ");
-                int hours = int.Parse(Console.ReadLine());
-                Console.Write("Value per hour: ");
-                double valuePerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                if (ch == 'y')
+                Console.Write("Price: ");
+                double price = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                //Console.Write("Value per hour: ");
+                //double valuePerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                if (ch == 'i')
                 {
-                    Console.Write("Additional charge: ");
-                    double additionalCharge = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                    list.Add(new OutsourcedEmployee(name, hours, valuePerHour, additionalCharge));
+                    Console.Write("Customs fee: ");
+                    double customsFee = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    list.Add(new ImportedProduct(name, price, customsFee));
+                } 
+                else if (ch == 'u')
+                {
+                    Console.Write("Manufacturate date (DD/MM/yyyy): ");
+                    DateTime manufacturateDate = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    list.Add(new UsedProduct(name, price, manufacturateDate ));
                 } 
                 else
                 {
-                    list.Add(new Employee(name, hours, valuePerHour));
-                } 
+                    list.Add(new Product(name, price));
+                }
             }
             Console.WriteLine();
-            Console.WriteLine("PAYMENTS");
-            foreach (Employee emp in list)
+            Console.WriteLine("PRICE TAGS:");
+            foreach (Product product in list)
             {
-                Console.WriteLine(emp.Name + " - $ " + emp.Payment().ToString("F2", CultureInfo.InvariantCulture));
+                Console.WriteLine(product.priceTag());
             }
         }
     }
