@@ -1,29 +1,59 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+
 using System.Globalization;
 
+
+
 namespace Course.Entities
+
 {
+
     class UsedProduct : Product
+
     {
-        public DateTime ManufaturateDate { get; set; }
+
+        public DateTime ManufactureDate { get; set; }
+
+
 
         public UsedProduct()
+
         {
 
         }
 
-        public UsedProduct(string name, double price, DateTime manufaturateDate)
+
+
+        public UsedProduct(string name, double price, DateTime manufactureDate)
+
             : base(name, price)
+
         {
-            ManufaturateDate = manufaturateDate;
+
+            ManufactureDate = manufactureDate;
+
         }
 
-        public override string priceTag()
+
+
+        public override string PriceTag()
+
         {
-            return Name + " (used) $ " + Price.ToString("F2", CultureInfo.InvariantCulture)
-                + " (Manufacturate date: " + ManufaturateDate.ToString("dd/MM/yyyy") + ")";
+
+            return Name
+
+                + " (used) $ "
+
+                + Price.ToString("F2", CultureInfo.InvariantCulture)
+
+                + " (Manufacture date: "
+
+                + ManufactureDate.ToString("dd/MM/yyyy")
+
+                + ")";
+
         }
+
     }
+
 }
